@@ -19,18 +19,16 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 app = Flask(__name__)
 CORS(app)
 
-# Use a smaller, more lightweight model
 try:
-    t5_model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-small")  # Smaller model
+    t5_model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-small")  
     t5_tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-small")
 except Exception as e:
     print(f"Model loading error: {e}")
     t5_model = None
     t5_tokenizer = None
 
-# Load lightweight retrieval model
 try:
-    retrieval_model = SentenceTransformer("all-MiniLM-L6-v2")  # Even smaller embedding model
+    retrieval_model = SentenceTransformer("all-MiniLM-L6-v2") 
 except Exception as e:
     print(f"Retrieval model loading error: {e}")
     retrieval_model = None
@@ -92,7 +90,7 @@ def extract_text_from_video(video_path):
 
         while cap.isOpened():
             ret, frame = cap.read()
-            if not ret or frame_count > 10:  # Limit to 10 frames
+            if not ret or frame_count > 10: 
                 break
             text += pytesseract.image_to_string(frame)
             frame_count += 1
@@ -142,7 +140,7 @@ def index_document(text):
 
 @app.route("/upload", methods=["POST"])
 def upload_file():
-    global uploaded_file_path  # Track uploaded file
+    global uploaded_file_path  
 
     if "file" not in request.files:
         return jsonify({"error": "No file uploaded"}), 400
@@ -241,7 +239,7 @@ def clear_faiss():
     """Clear FAISS index and reset stored documents."""
     global documents, faiss_index
     documents = []
-    faiss_index = faiss.IndexFlatL2(384)  # Reinitialize FAISS index
+    faiss_index = faiss.IndexFlatL2(384)  
     return jsonify({"message": "FAISS index cleared!"})
 
 if __name__ == "__main__":
