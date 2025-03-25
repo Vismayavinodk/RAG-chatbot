@@ -1,0 +1,135 @@
+/* General Chatbot Styling */
+.chat-container {
+  width: 500px;
+  margin: 50px auto;
+  background: #1e1e2f;
+  color: white;
+  border-radius: 12px;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Chatbot Title */
+.chat-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+/* Chatbox Messages */
+.chat-box {
+  height: 350px;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 8px;
+  background: #2c2c3e;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Messages */
+.message {
+  max-width: 75%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  margin: 5px 0;
+  word-wrap: break-word;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user {
+  background: #007bff;
+  color: white;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.bot {
+  background: #444466;
+  color: white;
+  align-self: flex-start;
+}
+
+/* File Upload Section */
+.file-upload-container {
+  display: flex;
+  gap: 10px;
+  margin: 15px auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.file-upload input {
+  display: none;
+}
+
+.upload-btn {
+  padding: 8px 12px;
+  border: none;
+  background: #28a745;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background: #218838;
+}
+
+/* Upload Status */
+.upload-status {
+  color: #ffcc00;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.file-name {
+  color: #ddd;
+  font-size: 14px;
+}
+
+/* Chat Input & Send Button */
+.chat-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #2c2c3e;
+  color: white;
+}
+
+.send-btn {
+  padding: 10px 15px;
+  background: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+
+.send-btn:hover {
+  background: #0056b3;
+}
